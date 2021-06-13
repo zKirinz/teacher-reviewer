@@ -1,0 +1,17 @@
+node_env: 'development'
+
+server:
+    port: 5000
+    origin: 'https://localhost:3000'
+
+db:
+    type: 'postgres'
+    host: 'localhost'
+    database: 'teacher_reviewer'
+    username: 'postgres'
+    password: '123456'
+    port: 5432
+    synchronize: true
+
+recaptcha:
+    secret_key: 123456
