@@ -1,8 +1,8 @@
-import ErrorFallback from '../../components/ErrorFallback'
-import RatingChart from '../../components/RartingChart'
-import Spinner from '../../components/Spinner'
+import ErrorFallback from '../../../components/ErrorFallback'
+import RatingChart from '../../../components/RartingChart'
+import Spinner from '../../../components/Spinner'
 
-import { withInformation } from '../../recoil/chart'
+import { withInformation } from '../../../recoil/chart'
 
 import { useRecoilValueLoadable } from 'recoil'
 

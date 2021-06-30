@@ -1,10 +1,10 @@
 import React from 'react'
 
-import ErrorFallback from '../../components/ErrorFallback'
-import Spinner from '../../components/Spinner'
+import ErrorFallback from '../../../components/ErrorFallback'
+import Spinner from '../../../components/Spinner'
 import { Stack, Text } from '@chakra-ui/react'
 
-import { withInitialReviews } from '../../recoil/teacher'
+import { withInitialReviews } from '../../../recoil/teacher'
 import ReviewsList from './ReviewsList'
 
 import { useRecoilValueLoadable } from 'recoil'

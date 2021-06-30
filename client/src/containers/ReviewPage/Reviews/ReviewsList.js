@@ -2,13 +2,13 @@ import { useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Spinner from 'react-spinkit'
 
-import ErrorFallback from '../../components/ErrorFallback'
-import Review from '../../components/Review'
+import ErrorFallback from '../../../components/ErrorFallback'
+import Review from '../../../components/Review'
 import { Stack, Text, Image, useTheme } from '@chakra-ui/react'
 
-import api from '../../Utils/apiCaller'
-import TomScrollAllReviews from '../../assets/images/tom-scroll-all-reviews.jpg'
-import teacherAtom from '../../recoil/teacher'
+import api from '../../../Utils/apiCaller'
+import TomScrollAllReviews from '../../../assets/images/tom-scroll-all-reviews.jpg'
+import teacherAtom from '../../../recoil/teacher'
 
 import { useRecoilValue } from 'recoil'
 

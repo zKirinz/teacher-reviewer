@@ -1,6 +1,10 @@
 import Particles from 'react-tsparticles'
 
+import { useMediaQuery } from '@chakra-ui/react'
+
 const ParticlesBg = () => {
+    const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
+
     return (
         <Particles
             style={{ position: 'absolute' }}
@@ -11,8 +15,8 @@ const ParticlesBg = () => {
                 },
                 particles: {
                     number: {
-                        value: 140,
-                        limit: 100,
+                        value: isLargerThan768 ? 140 : 70,
+                        limit: isLargerThan768 ? 100 : 50,
                         density: {
                             enable: false,
                             value_area: 700,
@@ -30,17 +34,17 @@ const ParticlesBg = () => {
                         },
                     },
                     opacity: {
-                        value: 0.7,
+                        value: isLargerThan768 ? 0.7 : 0.8,
                         random: true,
                         anim: {
                             enable: true,
-                            speed: 1,
-                            opacity_min: 0.6,
+                            speed: isLargerThan768 ? 1 : 0.5,
+                            opacity_min: isLargerThan768 ? 0.6 : 0.7,
                             sync: false,
                         },
                     },
                     size: {
-                        value: 42,
+                        value: isLargerThan768 ? 42 : 36,
                         random: true,
                         anim: {
                             enable: true,
@@ -51,14 +55,14 @@ const ParticlesBg = () => {
                     },
                     line_linked: {
                         enable: true,
-                        distance: 150,
+                        distance: isLargerThan768 ? 150 : 120,
                         color: '#ffffff',
                         opacity: 0.8,
                         width: 1.5,
                     },
                     move: {
                         enable: true,
-                        speed: 2,
+                        speed: isLargerThan768 ? 2 : 1.5,
                         direction: 'none',
                         random: false,
                         straight: false,
@@ -75,7 +79,7 @@ const ParticlesBg = () => {
                     detect_on: 'canvas',
                     events: {
                         onHover: {
-                            enable: true,
+                            enable: isLargerThan768 ? true : false,
                             mode: 'bubble',
                             parallax: {
                                 enable: false,
@@ -84,7 +88,7 @@ const ParticlesBg = () => {
                             },
                         },
                         onClick: {
-                            enable: true,
+                            enable: isLargerThan768 ? true : false,
                             mode: 'push',
                         },
                         resize: true,
@@ -97,8 +101,8 @@ const ParticlesBg = () => {
                             },
                         },
                         bubble: {
-                            distance: 180,
-                            size: 200,
+                            distance: 200,
+                            size: 160,
                             duration: 2,
                             opacity: 1,
                             speed: 1,

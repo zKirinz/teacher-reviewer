@@ -11,7 +11,7 @@ import {
     useMediaQuery,
 } from '@chakra-ui/react'
 
-import ChartAtom from '../../recoil/chart'
+import ChartAtom from '../../../recoil/chart'
 import ModalChartContent from './ModalChartContent'
 
 import { useRecoilValue } from 'recoil'

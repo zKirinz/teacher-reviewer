@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { MdInsertChart, MdHome, MdRateReview } from 'react-icons/md'
 import { useHistory } from 'react-router-dom'
 
-import Btn from '../../components/Button'
+import Btn from '../../../components/Button'
 import { RepeatIcon } from '@chakra-ui/icons'
 import { Text, useMediaQuery, useDisclosure, Icon } from '@chakra-ui/react'
 
-import chartAtom from '../../recoil/chart'
-import teacherAtom, { withInitialReviews } from '../../recoil/teacher'
+import chartAtom from '../../../recoil/chart'
+import teacherAtom, { withInitialReviews } from '../../../recoil/teacher'
 import ModalChart from './ModalChart'
 import ModalReview from './ModalReview'
 
@@ -15,8 +15,8 @@ import { useResetRecoilState, useSetRecoilState, useRecoilValue } from 'recoil'
 
 const Options = () => {
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
-    const modalReviewRef = React.useRef()
-    const modalChartRef = React.useRef()
+    const modalReviewRef = useRef()
+    const modalChartRef = useRef()
 
     const history = useHistory()
     const handleGoBackToHomeClick = () => {

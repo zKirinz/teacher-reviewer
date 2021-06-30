@@ -15,13 +15,15 @@ import {
     Textarea,
     Stack,
     useTheme,
-    useMediaQuery,
     Box,
+    useMediaQuery,
+    useDisclosure,
 } from '@chakra-ui/react'
 
-import { RECAPTCHA_SITE_KEY } from '../../config'
-import reviewAtom from '../../recoil/review'
-import teacherAtom from '../../recoil/teacher'
+import { RECAPTCHA_SITE_KEY } from '../../../config'
+import reviewAtom from '../../../recoil/review'
+import teacherAtom from '../../../recoil/teacher'
+import CheckTeacherCarousel from './CheckTeacherCarousel'
 import ModalReviewStatus from './ModalReviewStatus'
 
 import { useRecoilValue, useSetRecoilState } from 'recoil'
@@ -30,6 +32,7 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
     const theme = useTheme()
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
     const recaptchaRef = useRef()
+    const checkTeacherInstructionRef = useRef()
 
     const teacher = useRecoilValue(teacherAtom)
     const setReview = useSetRecoilState(reviewAtom)
@@ -42,6 +45,11 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
     const [recaptchaError, setRecaptchaError] = useState('')
     const [recaptchaToken, setRecaptchaToken] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const {
+        isOpen: isCheckTeacherCarouselOpen,
+        onOpen: onCheckTeacherCarouselOpen,
+        onClose: onCheckTeacherCarouselClose,
+    } = useDisclosure()
 
     const handleSetContent = (content) => {
         if (contentError) {
@@ -177,7 +185,21 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
                 </Stack>
 
                 <Text px={5} fontWeight="500" fontStyle="italic" textAlign="center" pt={2}>
-                    *Make sure you don&apos;t review wrong teacher.
+                    *Make sure you don&apos;t review wrong teacher.&nbsp;
+                    <Text
+                        display="inline-block"
+                        as="u"
+                        cursor="pointer"
+                        color="yellow.500"
+                        _hover={{ color: 'yellow.400' }}
+                        _active={{ color: 'yellow.600' }}
+                        _visited={{ color: 'yellow.600' }}
+                        transition={'all 0.2s ease-in-out'}
+                        onClick={onCheckTeacherCarouselOpen}
+                        ref={checkTeacherInstructionRef}
+                    >
+                        How to check?
+                    </Text>
                 </Text>
                 {isLargerThan768 ? null : (
                     <Stack direction="column" w="100%" alignItems="center" pt={3}>
@@ -224,9 +246,16 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
                         Save review
                     </Button>
                 </ModalFooter>
+
                 <Box transitionProperty="" transitionDuration="2s" transition="ease-in-out">
                     <ModalReviewStatus onClose={handleOnClose} setIsLoading={setIsLoading} />
                 </Box>
+
+                <CheckTeacherCarousel
+                    isOpen={isCheckTeacherCarouselOpen}
+                    onClose={onCheckTeacherCarouselClose}
+                    finalRef={checkTeacherInstructionRef}
+                />
             </ModalContent>
         </Modal>
     )

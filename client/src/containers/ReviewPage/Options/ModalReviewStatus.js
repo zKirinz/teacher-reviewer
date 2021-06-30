@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 
-import Toast from '../../components/Toast'
+import Toast from '../../../components/Toast'
 
-import reviewAtom, { withResponse } from '../../recoil/review'
+import reviewAtom, { withResponse } from '../../../recoil/review'
 
 import { useRecoilValueLoadable, useResetRecoilState } from 'recoil'
 
