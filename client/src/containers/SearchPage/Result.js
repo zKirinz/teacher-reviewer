@@ -6,8 +6,8 @@ import ErrorFallback from '../../components/ErrorFallback'
 import Spinner from '../../components/Spinner'
 import { Image, Stack, Text, useMediaQuery } from '@chakra-ui/react'
 
-import TypingCat from '../../assets/gifs/typing-cat.gif'
 import TomNotFound from '../../assets/images/tom-not-found.jpg'
+import TypingCat from '../../assets/images/typing-cat.jpg'
 import { withResult } from '../../recoil/search'
 
 import { useRecoilValueLoadable, useResetRecoilState } from 'recoil'
@@ -28,7 +28,12 @@ const Result = () => {
                 if (isLargerThan768) {
                     return (
                         <Stack w="100%" h="100%" justifyContent="center" alignItems="center" p="10">
-                            <Image src={TypingCat} borderRadius="full" w="100px" />
+                            <Image
+                                alt="a typing cat"
+                                src={TypingCat}
+                                borderRadius="full"
+                                w="100px"
+                            />
                             <Text fontSize="2xl" textAlign="center" opacity="0.8">
                                 Enter teacher code to start finding
                             </Text>
@@ -37,7 +42,7 @@ const Result = () => {
                 }
                 return (
                     <Stack w="100%" h="100%" justifyContent="center" alignItems="center" p="10">
-                        <Image src={TypingCat} borderRadius="full" w="80px" />
+                        <Image alt="a typing cat" src={TypingCat} borderRadius="full" w="80px" />
                         <Text fontSize="xl" textAlign="center" opacity="0.8" fontWeight="500">
                             Enter teacher code to start finding
                         </Text>
@@ -48,7 +53,12 @@ const Result = () => {
                 if (isLargerThan768) {
                     return (
                         <Stack w="100%" h="100%" justifyContent="center" alignItems="center" p="10">
-                            <Image src={TomNotFound} borderRadius="full" w="100px" />
+                            <Image
+                                alt="a confuse Tom cat"
+                                src={TomNotFound}
+                                borderRadius="full"
+                                w="100px"
+                            />
                             <Text fontSize="2xl" textAlign="center">
                                 Looks like your teacher is not in our list yet
                             </Text>
@@ -57,7 +67,12 @@ const Result = () => {
                 }
                 return (
                     <Stack w="100%" h="100%" justifyContent="center" alignItems="center" p="10">
-                        <Image src={TomNotFound} borderRadius="full" w="80px" />
+                        <Image
+                            alt="a confuse Tom cat"
+                            src={TomNotFound}
+                            borderRadius="full"
+                            w="80px"
+                        />
                         <Text fontSize="xl" textAlign="center" fontWeight="500">
                             Looks like your teacher is not in our list yet
                         </Text>

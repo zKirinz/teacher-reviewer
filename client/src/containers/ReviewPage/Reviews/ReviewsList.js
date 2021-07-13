@@ -59,6 +59,7 @@ const ReviewsList = ({ reviewsList }) => {
                 <Text fontSize="2xl" fontWeight="600" textAlign="center" color="yellow.500" py={4}>
                     That is all reviews
                     <Image
+                        alt="tom cat reading newspaper"
                         src={TomScrollAllReviews}
                         borderRadius="full"
                         w="60px"

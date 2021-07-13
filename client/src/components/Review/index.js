@@ -20,7 +20,6 @@ const Review = ({ content, rating, time }) => {
         Review = (
             <Box
                 w="100%"
-                minW="xl"
                 pl="4"
                 pr="2"
                 pt="2"

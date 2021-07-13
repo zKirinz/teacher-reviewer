@@ -62,7 +62,7 @@ const Card = ({ code, rating, noReviews }) => {
                 borderColor="whiteAlpha.400"
                 bgColor="teal"
             >
-                <Text fontSize="3xl" color="white">
+                <Text fontSize="2xl" color="white">
                     {code}
                 </Text>
                 <Box w="100%" display="flex" justifyContent="center" mt="0 !important">
@@ -70,7 +70,7 @@ const Card = ({ code, rating, noReviews }) => {
                         rating={rating}
                         starRatedColor={theme.colors.yellow[400]}
                         numberOfStars={5}
-                        starDimension="32px"
+                        starDimension="28px"
                         starSpacing="6px"
                         name="rating"
                     />

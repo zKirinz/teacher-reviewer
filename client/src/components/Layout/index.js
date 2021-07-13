@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Grid, Stack, Divider, useMediaQuery } from '@chakra-ui/react'
+import { Grid, Stack, useMediaQuery } from '@chakra-ui/react'
 
 import Footer from '../Footer'
 import ParticlesBg from '../Particles'
@@ -11,11 +11,11 @@ const Layout = (props) => {
     return (
         <React.Fragment>
             <ParticlesBg />
-            <Grid minH="100vh" minW="100vw" justifyContent="center" alignItems="flex-start">
+            <Grid h="100vh" w="100vw" justifyContent="center" alignItems="flex-start">
                 <Stack
-                    w="80vw"
+                    w="90vw"
                     maxW="container.md"
-                    h={isLargerThan768 ? '78vh' : '86vh'}
+                    h={isLargerThan768 ? '78vh' : '90vh'}
                     pl="2vw"
                     pr="2vw"
                     pt="3vh"
@@ -25,11 +25,10 @@ const Layout = (props) => {
                     zIndex="100"
                     alignSelf="center"
                     direction="column"
+                    justifyContent="space-between"
                     alignItems="center"
-                    overflow="hidden"
                 >
                     {props.children}
-                    <Divider orientation="horizontal" bgColor="teal" w="97%" h="0.5" />
                     <Footer />
                 </Stack>
             </Grid>

@@ -41,7 +41,8 @@ const TeacherBtn = ({ code, rating, noReviews, onClick }) => {
             <Button
                 w="100%"
                 minW="240"
-                minH="120"
+                h={16}
+                minH="100"
                 borderRadius="xl"
                 shadow="md"
                 className="bttn-unite bttn-lg bttn-success"

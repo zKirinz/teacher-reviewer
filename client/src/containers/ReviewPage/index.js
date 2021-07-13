@@ -25,10 +25,10 @@ const ReviewPage = () => {
 
             <Stack
                 id="infinite-scroll"
+                flexGrow={1}
+                justifyContent="center"
                 w="100%"
-                h="100%"
-                overflowX="visible"
-                overflowY="auto"
+                overflow="auto"
                 mt="3"
                 mb="2"
                 px="2"

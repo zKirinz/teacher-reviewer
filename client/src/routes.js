@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
+import Spinner from './components/Spinner'
 import { SlideFade } from '@chakra-ui/react'
 
 const routes = [
@@ -16,7 +17,7 @@ const routes = [
 ]
 
 const Routes = (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<Spinner />}>
         <Switch>
             {routes.map((route, index) => (
                 <Route
@@ -30,10 +31,10 @@ const Routes = (
                                 in={match !== null}
                                 style={{
                                     width: '100%',
-                                    height: '100%',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
+                                    flexGrow: '1',
                                     overflow: 'hidden',
                                 }}
                             >

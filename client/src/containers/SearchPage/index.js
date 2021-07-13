@@ -25,7 +25,7 @@ const SearchPage = () => {
                 <SeachBar onChange={handleSearchChange} />
             </Container>
 
-            <Stack w="100%" h="100%" direction="column" overflow="auto" spacing="4" p="2">
+            <Stack w="100%" h="100%" direction="column" overflow="auto" p="2">
                 <Result />
             </Stack>
         </React.Fragment>
