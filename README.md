@@ -33,7 +33,7 @@
 
 ## Available Scripts
 - To advoid the complexity of setup client and server, I strongly recommend you to setup with `Docker`
-- If you want to run Book Playlist without `Docker` or run separately, read the `README.md` in `client` and `server` folder.
+- If you want to run Teacher Reviewer without `Docker` or run separately, read the `README.md` in `client` and `server` folder.
 - In the project directory, you can run following commands to setup with `Docker`:
 
 ## Start up docker containers
