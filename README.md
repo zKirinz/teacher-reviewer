@@ -19,6 +19,7 @@
   - Chakra UI - A simple, modular and accessible component library
   - Recoil - A state management library for React
   - Apexcharts.js - Modern & Interactive Open-source Charts
+  - tsParticles - Particles Animations Background
 - Backend
   - NestJS - A progressive Node.js framework
   - Class Validator - Validation
