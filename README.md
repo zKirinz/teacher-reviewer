@@ -34,9 +34,6 @@
 - To advoid the complexity of setup client and server, I strongly recommend you to setup with `Docker`
 - If you want to run Book Playlist without `Docker` or run separately, read the `README.md` in `client` and `server` folder.
 - In the project directory, you can run following commands to setup with `Docker`:
-Before jump in to run this application:
-- First, remember to create a `environment.ts` (development) and `environment.prod.ts` (production) files with content exactly like `environment.example.ts` file content.
-- Then replace  `your_api_key` with your  [Firebase](https://firebase.google.com/) API.
 
 ## Start up docker containers
 ```
