@@ -71,7 +71,7 @@ export class ReviewsService {
 
     @Cron('0 */10 * * * *', { timeZone: 'Asia/Ho_Chi_Minh' })
     async calculate() {
-        this.logger.verbose('Calculate Reviews percentages and Rating of all teachers starts!')
+        this.logger.verbose('Calculate Reviews percentages and Rating of all teachers stars!')
         const teachers = await this.teacherRepository.find({})
 
         teachers.forEach(async (teacher) => {
@@ -115,9 +115,9 @@ export class ReviewsService {
         this.logger.verbose('Calculate Reviews percentages and Rating of all teachers completed!')
     }
 
-    @Cron('0 */4 * * * *', { timeZone: 'Asia/Ho_Chi_Minh' })
+    @Cron('0 */5 * * * *', { timeZone: 'Asia/Ho_Chi_Minh' })
     async calculateNoReviews() {
-        this.logger.verbose('Calculate NoReviews of all teachers starts!')
+        this.logger.verbose('Calculate NoReviews of all teachers stars!')
         const teachers = await this.teacherRepository.find({})
 
         teachers.forEach(async (teacher) => {

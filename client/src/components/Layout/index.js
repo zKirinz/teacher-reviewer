@@ -7,7 +7,7 @@ import ParticlesBg from '../Particles'
 
 const Layout = (props) => {
     const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
-
+    console.log('layout re-render!')
     return (
         <React.Fragment>
             <ParticlesBg />

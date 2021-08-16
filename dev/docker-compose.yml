@@ -30,16 +30,27 @@ services:
     volumes:
       - ../server/:/app/server
 
-  mariadb:
+  postgresql:
     container_name: database
-    image: mariadb
+    image: postgres
     environment:
-      MARIADB_ROOT_PASSWORD: 123456
-      MARIADB_DATABASE: teacher_reviewer
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: task_management
     ports:
-      - 3307:3306
+      - "15432:5432"
     volumes:
-      - maria:/data/db
+      - postgres:/var/lib/postgresql/data/
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgresql
 
 volumes:
-  maria:
+  postgres:

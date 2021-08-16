@@ -52,15 +52,9 @@ const Footer = () => {
     }
 
     return (
-        <Stack>
+        <Stack direction="column" justifyContent="center" alignItems="center" w="100%" px="2">
             <Divider orientation="horizontal" bgColor="teal" w="97%" h="0.5" />
-            <Stack
-                w="100%"
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center"
-                px="2"
-            >
+            <Stack w="100%" direction="row" justifyContent="space-between" alignItems="center">
                 <Tooltip hasArrow label="About us" placement="right-start">
                     <Button
                         colorScheme="teal"

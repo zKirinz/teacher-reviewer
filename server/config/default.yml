@@ -8,8 +8,8 @@ db:
     type: 'postgres'
     host: 'localhost'
     database: 'teacher_reviewer'
-    username: 'postgres'
-    password: '123456'
+    username: 'username'
+    password: 'password'
     port: 5432
     synchronize: true
 

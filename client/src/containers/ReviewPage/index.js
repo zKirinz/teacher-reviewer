@@ -23,16 +23,7 @@ const ReviewPage = () => {
                 <Information />
             </Container>
 
-            <Stack
-                id="infinite-scroll"
-                flexGrow={1}
-                justifyContent="center"
-                w="100%"
-                overflow="auto"
-                mt="3"
-                mb="2"
-                px="2"
-            >
+            <Stack id="infinite-scroll" flexGrow={1} w="100%" overflow="auto" mt="3" mb="2" px="2">
                 <Reviews />
             </Stack>
 
