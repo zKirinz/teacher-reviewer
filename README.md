@@ -8,7 +8,7 @@
 - If that's true, this application is for you!
 - This application allows student to refer or review teachers in `incognito` way.
 - The statistics of reviews will be visualized with chart for easier to other people to see the overview of the teacher.
-- Work well only on `Desktop` view, `Mobile` version is in maintenance.
+- Work well on `Desktop` and `Mobile` view.
 
 **Note**: This application will automatically re-calculate reviews with 5-10 minutes intervals.
 
