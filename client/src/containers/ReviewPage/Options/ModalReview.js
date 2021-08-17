@@ -30,7 +30,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil'
 
 const ModalReview = ({ isOpen, onClose, finalRef }) => {
     const theme = useTheme()
-    const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
+    const [isLargerThan768Width] = useMediaQuery('(min-width: 768px)')
     const recaptchaRef = useRef()
     const checkTeacherInstructionRef = useRef()
 
@@ -130,18 +130,19 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
             isOpen={isOpen}
             onClose={onClose}
             motionPreset="scale"
-            scrollBehavior="inside"
+            scrollBehavior="outside"
             size="2xl"
             isCentered
         >
             <ModalOverlay />
-            <ModalContent pb={5}>
-                <ModalHeader fontSize={isLargerThan768 ? '2xl' : 'xl'}>
+            <ModalContent pb={5} overflow="auto">
+                <ModalHeader fontSize={isLargerThan768Width ? '2xl' : 'xl'}>
                     Make a review for{' '}
                     <Text display="inline-block" color="yellow.500">
                         {teacher}
                     </Text>
                 </ModalHeader>
+                <ModalCloseButton />
                 <ModalBody overflow>
                     <Textarea
                         placeholder="Enter your review"
@@ -156,13 +157,12 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
                         {contentError}
                     </Text>
                 </ModalBody>
-                <ModalCloseButton />
-                <Stack direction={isLargerThan768 ? 'row' : 'column'} alignItems="center">
+                <Stack direction={isLargerThan768Width ? 'row' : 'column'} alignItems="center">
                     <Stack
                         direction="row"
                         alignItems="center"
                         pl={6}
-                        pr={isLargerThan768 ? 3 : 6}
+                        pr={isLargerThan768Width ? 3 : 6}
                         py={2}
                     >
                         <Text fontSize="xl" fontWeight="500">
@@ -201,7 +201,7 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
                         How to check?
                     </Text>
                 </Text>
-                {isLargerThan768 ? null : (
+                {isLargerThan768Width ? null : (
                     <Stack direction="column" w="100%" alignItems="center" pt={3}>
                         <ReCAPTCHA
                             sitekey={RECAPTCHA_SITE_KEY}
@@ -217,7 +217,7 @@ const ModalReview = ({ isOpen, onClose, finalRef }) => {
                     </Stack>
                 )}
                 <ModalFooter>
-                    {isLargerThan768 ? (
+                    {isLargerThan768Width ? (
                         <Stack direction="column" w="100%">
                             <ReCAPTCHA
                                 sitekey={RECAPTCHA_SITE_KEY}

@@ -27,7 +27,7 @@ const ReviewPage = () => {
                 <Reviews />
             </Stack>
 
-            <Stack direction="row" spacing="3">
+            <Stack direction="row" spacing="3" minH="45px">
                 <Options />
             </Stack>
         </React.Fragment>

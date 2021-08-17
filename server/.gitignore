@@ -39,4 +39,5 @@ lerna-debug.log*
 !.elasticbeanstalk/*.global.yml
 
 # production
+config/development.yml
 config/production.yml
