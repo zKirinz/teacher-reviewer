@@ -3,32 +3,32 @@ version: "3.7"
 services:
   client:
     container_name: client
-    image: node:14.17-alpine
-    depends_on:
-      - api
-      - mariadb
-    command: >
-      sh -c "yarn &&
-          yarn start"
-    ports:
-      - 3000:3000
-    working_dir: /app/client
+    build:
+      context: .
+      dockerfile: ./docker/dev/client.Dockerfile
     volumes:
-      - ../client/:/app/client
+      - web-content:/client/build
 
   api:
     container_name: api
-    image: node:14.17-alpine
+    build:
+      context: .
+      dockerfile: ./docker/dev/server.Dockerfile
     depends_on:
-      - mariadb
-    command: >
-      sh -c "yarn &&
-          yarn start:dev"
-    ports:
-      - 5000:5000
-    working_dir: /app/server
+      - postgresql
+
+  proxy:
+    container_name: proxy
+    build:
+      context: .
+      dockerfile: ./docker/dev/proxy.Dockerfile
     volumes:
-      - ../server/:/app/server
+      - web-content:/content
+    ports:
+      - "80:80"
+    depends_on:
+      - client
+      - api
 
   postgresql:
     container_name: database
@@ -36,13 +36,14 @@ services:
     environment:
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: task_management
+      POSTGRES_DB: teacher_reviewer
     ports:
       - "15432:5432"
     volumes:
       - postgres:/var/lib/postgresql/data/
 
   pgadmin:
+    container_name: db-admin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
@@ -54,3 +55,4 @@ services:
 
 volumes:
   postgres:
+  web-content:

@@ -6,7 +6,7 @@ server:
 
 db:
     type: 'postgres'
-    host: 'localhost'
+    host: 'postgresql'
     database: 'teacher_reviewer'
     username: 'username'
     password: 'password'
