@@ -1,6 +1,6 @@
 # <img src="./docs/images/logo.png" width="100" height="60" /> Teacher Reviewer
 
-## [Live Demo](https://youtu.be/CCBWVTTRZac) or [Try it here](http://teacher-reviewer.web.app/)
+## [Live Demo](https://youtu.be/CCBWVTTRZac)
 
 ## What is Teacher Reviewer?
 - Tired of asking people to find suitable teachers for future semesters?
